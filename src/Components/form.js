@@ -99,9 +99,12 @@ class Form extends Component {
                     <label>State :</label> <input type="text" value={this.state.state} onChange={this.statehandler} placeholder="State..." /><br />
                     <label>Email :</label> <input type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
                     <label>Password :</label> <input type="password" value={this.state.password} onChange={this.passwordhandler} placeholder="Password..." /><br />
+                    
 
                     <input type="submit" value="Submit" />
+                    
                 </form>
+                
             </div>
 
         )

@@ -47,7 +47,3 @@ class Login extends React.Component {
 
 export default Login;
 //make sure to import login on the app.js
-
-
-
-
