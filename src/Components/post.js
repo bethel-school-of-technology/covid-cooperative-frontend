@@ -77,3 +77,4 @@ class UserInfoForm extends
 ReactDOM.render(<UserInfoForm />,
     document.getElementById("root"));
 
+    export default UserInfoForm;

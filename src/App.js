@@ -1,6 +1,5 @@
 import './App.css';
 import Form from './Components/form.js';
-import Login from './Components/login.js';
 
 
 function App() {
