@@ -38,7 +38,7 @@ class Login extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <input type='text' name='email' placeholder='email...' required onChange={this.handleChange} />'
                     <input type='password' name='password' placeholder='password...' required onChange={this.handleChange} />'
-                    <button onSubmit>Login</button>
+                   <input type='submit' value='Submit' />
                 </form>
             </div>
         )
@@ -47,3 +47,4 @@ class Login extends React.Component {
 
 export default Login;
 //make sure to import login on the app.js
+// <button onClick>Login</button>
