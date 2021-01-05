@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+
 
 // Below is the form to signup. 
 
@@ -10,10 +10,8 @@ class Form extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            email: "",
-            password: "",
-            city: "",
-            state: ""
+            username: "",
+            password: ""
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,9 +27,9 @@ class Form extends Component {
             lastName: event.target.value
         })
     }
-    emailhandler = (event) => {
+    usernamehandler = (event) => {
         this.setState({
-            email: event.target.value
+            username: event.target.value
         })
     }
     passwordhandler = (event) => {
@@ -40,76 +38,38 @@ class Form extends Component {
         })
     }
 
-    cityhandler = (event) => {
+    handleSubmit = (event) => {
+        alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
+        console.log(this.state);
         this.setState({
-            city: event.target.value
+            firstName: "",
+            lastName: "",
+            username: "",
+            password: "",
         })
-    }
-    statehandler = (event) => {
-        this.setState({
-            state: event.target.value
-        })
-    }
-
-
-    // CREATE FETCH TO BACKEND 
-    handleSubmit = async (event) => {
-        event.preventDefault();
-
-        let data = await fetch('http://localhost:3000/participants/signup', {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ firstname: this.state.firstName, lastname: this.state.lastName, email: this.state.email, password: this.state.password, city: this.state.city, state: this.state.state})
-        })
-
-        let participant = await data.json({});
-
-        if (participant.hasOwnProperty("error")) {
-            console.log(participant.error)
-        }
-
-        if (participant.created) {
-            alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
-            console.log(this.state);
-            this.setState({
-                firstName: "",
-                lastName: "",
-                email: "",
-                password: "",
-                city: "", 
-                state: "", 
-            })
-        }
-        else {
-            alert('error');
-        }
+        event.preventDefault()
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={() => this.handleSubmit()}>
+                <form onSubmit={this.handleSubmit}>
                     <h1>User Registration</h1>
                     <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
                     <label>LastName :</label> <input type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="LastName..." /><br />
-                    <label>City :</label> <input type="text" value={this.state.city} onChange={this.cityhandler} placeholder="City..." /><br />
-                    <label>State :</label> <input type="text" value={this.state.state} onChange={this.statehandler} placeholder="State..." /><br />
-                    <label>Email :</label> <input type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
+                    <label>Username :</label> <input type="text" value={this.state.username} onChange={this.usernamehandler} placeholder="Username..." /><br />
                     <label>Password :</label> <input type="password" value={this.state.password} onChange={this.passwordhandler} placeholder="Password..." /><br />
-                    
 
                     <input type="submit" value="Submit" />
-                    
                 </form>
-                
             </div>
 
         )
     }
 }
+
+export default Form
+
 
 //Below is the form to post.
 
@@ -162,7 +122,7 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Title: <input
+                    Name: <input
                         name="title"
                         value={this.state.title}
                         onChange={this.handleChange}
@@ -170,7 +130,7 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Post: <input
+                    Name: <input
                         name="post"
                         value={this.state.post}
                         onChange={this.handleChange}
@@ -186,4 +146,4 @@ class UserInfoForm extends
 ReactDOM.render(<UserInfoForm />,
     document.getElementById("root"));
 
-export default Form
+// export default Form
