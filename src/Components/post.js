@@ -61,7 +61,7 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Post: <input
+                    Name: <input
                         name="post"
                         value={this.state.post}
                         onChange={this.handleChange}
@@ -77,4 +77,3 @@ class UserInfoForm extends
 ReactDOM.render(<UserInfoForm />,
     document.getElementById("root"));
 
-    export default UserInfoForm;
