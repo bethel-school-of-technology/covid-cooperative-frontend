@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import ReactDOM from 'react-dom';
 
 // Below is the form to signup. 
 
@@ -42,18 +42,66 @@ class Form extends Component {
         alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
         console.log(this.state);
         this.setState({
+//routIng
+            state: event.target.value
+        })
+    }
+
+
+    // CREATE FETCH TO BACKEND 
+    handleSubmit = async (event) => {
+        event.preventDefault();
+        console.log('submitting form')
+
+        let data = await fetch('http://localhost:3000/participants/signup', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ firstname: this.state.firstName, lastname: this.state.lastName, email: this.state.email, password: this.state.password, city: this.state.city, state: this.state.state})
+        })
+
+        let participant = await data.json({});
+
+        console.log(participant)
+
+        if (participant.hasOwnProperty("error")) {
+            console.log(participant.error)
+        }
+
+        if (participant.created) {
+            window.alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
+            console.log(this.state);
+            this.setState({
+                firstName: "",
+                lastName: "",
+                email: "",
+                password: "",
+                city: "", 
+                state: "", 
+            })
+        }
+        else {
+            window.alert('error');
+        }
             firstName: "",
             lastName: "",
             username: "",
             password: "",
         })
         event.preventDefault()
+      //dev
     }
 
     render() {
         return (
             <div>
+
+                <form onSubmit={(e) => this.handleSubmit(e)}>
+
                 <form onSubmit={this.handleSubmit}>
+
                     <h1>User Registration</h1>
                     <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
                     <label>LastName :</label> <input type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="LastName..." /><br />

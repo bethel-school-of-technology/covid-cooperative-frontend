@@ -6,7 +6,7 @@ import Home from './Components/home.js';
 import Form from './Components/form.js';
 import Login from './Components/login.js';
 import Post from './Components/post.js';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 
 
@@ -23,17 +23,19 @@ function NINJA() {
       <div>
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/login.js">Login</Link></li>
-          <li><Link to="/form.js">Form</Link></li>
-          <li><Link to="/post.js">Post</Link></li>
+          <li><Link to="/form">Form</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/post">Post</Link></li>
 
         </ul>
 
         <hr />
+        <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/login.js" component={Login} />
-        <Route path="/form.js" component={Form} />
-        <Route path="/post.js" component={Post} />
+        <Route path="/login" component={Login} />
+        <Route path="/form" component={Form} />
+        <Route path="/post" component={Post} />
+        </Switch>
       </div>
     </Router>
   );
