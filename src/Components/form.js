@@ -55,6 +55,7 @@ class Form extends Component {
     // CREATE FETCH TO BACKEND 
     handleSubmit = async (event) => {
         event.preventDefault();
+        console.log('submitting form')
 
         let data = await fetch('http://localhost:3000/participants/signup', {
             method: 'POST',
@@ -67,12 +68,14 @@ class Form extends Component {
 
         let participant = await data.json({});
 
+        console.log(participant)
+
         if (participant.hasOwnProperty("error")) {
             console.log(participant.error)
         }
 
         if (participant.created) {
-            alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
+            window.alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
             console.log(this.state);
             this.setState({
                 firstName: "",
@@ -84,14 +87,14 @@ class Form extends Component {
             })
         }
         else {
-            alert('error');
+            window.alert('error');
         }
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={() => this.handleSubmit()}>
+                <form onSubmit={(e) => this.handleSubmit(e)}>
                     <h1>User Registration</h1>
                     <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
                     <label>LastName :</label> <input type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="LastName..." /><br />
