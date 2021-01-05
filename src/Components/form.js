@@ -10,10 +10,8 @@ class Form extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            email: "",
-            password: "",
-            city: "",
-            state: ""
+            username: "",
+            password: ""
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,9 +27,9 @@ class Form extends Component {
             lastName: event.target.value
         })
     }
-    emailhandler = (event) => {
+    usernamehandler = (event) => {
         this.setState({
-            email: event.target.value
+            username: event.target.value
         })
     }
     passwordhandler = (event) => {
@@ -40,13 +38,11 @@ class Form extends Component {
         })
     }
 
-    cityhandler = (event) => {
+    handleSubmit = (event) => {
+        alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
+        console.log(this.state);
         this.setState({
-            city: event.target.value
-        })
-    }
-    statehandler = (event) => {
-        this.setState({
+//routIng
             state: event.target.value
         })
     }
@@ -89,30 +85,39 @@ class Form extends Component {
         else {
             window.alert('error');
         }
+            firstName: "",
+            lastName: "",
+            username: "",
+            password: "",
+        })
+        event.preventDefault()
+      //dev
     }
 
     render() {
         return (
             <div>
+
                 <form onSubmit={(e) => this.handleSubmit(e)}>
+
+                <form onSubmit={this.handleSubmit}>
+
                     <h1>User Registration</h1>
                     <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
                     <label>LastName :</label> <input type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="LastName..." /><br />
-                    <label>City :</label> <input type="text" value={this.state.city} onChange={this.cityhandler} placeholder="City..." /><br />
-                    <label>State :</label> <input type="text" value={this.state.state} onChange={this.statehandler} placeholder="State..." /><br />
-                    <label>Email :</label> <input type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
+                    <label>Username :</label> <input type="text" value={this.state.username} onChange={this.usernamehandler} placeholder="Username..." /><br />
                     <label>Password :</label> <input type="password" value={this.state.password} onChange={this.passwordhandler} placeholder="Password..." /><br />
-                    
 
                     <input type="submit" value="Submit" />
-                    
                 </form>
-                
             </div>
 
         )
     }
 }
+
+export default Form
+
 
 //Below is the form to post.
 
@@ -165,7 +170,7 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Title: <input
+                    Name: <input
                         name="title"
                         value={this.state.title}
                         onChange={this.handleChange}
@@ -173,7 +178,7 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Post: <input
+                    Name: <input
                         name="post"
                         value={this.state.post}
                         onChange={this.handleChange}
@@ -189,4 +194,4 @@ class UserInfoForm extends
 ReactDOM.render(<UserInfoForm />,
     document.getElementById("root"));
 
-export default Form
+// export default Form
