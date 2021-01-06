@@ -10,7 +10,7 @@ class UserInfoForm extends
         super();
         this.state = {
             username: "",
-            category: "",
+           // category: "",
             title: "",
             post: ""
         };
@@ -22,7 +22,7 @@ class UserInfoForm extends
     }
     handleSubmit = (event) => {
         alert("Username:" + this.state.username +
-            "Category:" + this.state.category +
+           // "Category:" + this.state.category +
             "Title:" + this.state.title +
             "Post:" + this.state.post);
         event.preventDefault();
@@ -40,19 +40,6 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Category: <select
-                        name="category"
-                        value={this.state.category}
-                        onChange={this.handleChange}
-                    >
-                        <option value="">select ...</option>
-                        <option value="mentalHealth">Mental Health</option>
-                        <option value="jobs">Jobs</option>
-                        <option value="goodNews">Good News</option>
-                    </select>
-                </label>
-                <br />
-                <label>
                     Title: <input
                         name="title"
                         value={this.state.title}
@@ -61,7 +48,7 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Post: <input
+                    Name: <input
                         name="post"
                         value={this.state.post}
                         onChange={this.handleChange}
@@ -78,3 +65,18 @@ ReactDOM.render(<UserInfoForm />,
     document.getElementById("root"));
 
     export default UserInfoForm;
+
+
+    // <label>
+    //                 Category: <select
+    //                     name="category"
+    //                     value={this.state.category}
+    //                     onChange={this.handleChange}
+    //                 >
+    //                     <option value="">select ...</option>
+    //                     <option value="mentalHealth">Mental Health</option>
+    //                     <option value="jobs">Jobs</option>
+    //                     <option value="goodNews">Good News</option>
+    //                 </select>
+    //             </label>
+    //             <br />
