@@ -6,6 +6,7 @@ import Home from './Components/home.js';
 import Form from './Components/form.js';
 import Login from './Components/login.js';
 import Post from './Components/post.js';
+import postFeed from './Components/postFeed'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 
@@ -35,6 +36,7 @@ function NINJA() {
         <Route path="/login" component={Login} />
         <Route path="/form" component={Form} />
         <Route path="/post" component={Post} />
+        <Route path="/postFeed" component={postFeed} />
         </Switch>
       </div>
     </Router>
