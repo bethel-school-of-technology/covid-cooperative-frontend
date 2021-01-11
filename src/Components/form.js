@@ -60,7 +60,7 @@ class Form extends Component {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ firstname: this.state.firstName, lastname: this.state.lastName, email: this.state.email, password: this.state.password, city: this.state.city, state: this.state.state})
+            body: JSON.stringify({ firstname: this.state.firstName, lastname: this.state.lastName, email: this.state.email, city: this.state.city, state: this.state.state, password: this.state.password})
         })
 
         let participant = await data.json({});
@@ -78,9 +78,9 @@ class Form extends Component {
                 firstName: "",
                 lastName: "",
                 email: "",
-                password: "",
-                city: "", 
+                city: "",
                 state: "", 
+                password: "", 
             })
         }
         else {
@@ -93,7 +93,7 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={(e) => this.handleSubmit(e)}>
+                <form onSubmit={(e) => this.handleSubmit(e)}></form>
                 <form onSubmit={this.handleSubmit}>
                     <h1>User Registration</h1>
                     <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
@@ -103,7 +103,6 @@ class Form extends Component {
                     <label>State :</label> <input type="text" value={this.state.state} onChange={this.statehandler} placeholder="State..." /><br />
                     <label>Password :</label> <input type="password" value={this.state.password} onChange={this.passwordhandler} placeholder="Password..." /><br />
                     <input type="submit" value="Submit" />
-                </form>
                 </form>
             </div>
 
