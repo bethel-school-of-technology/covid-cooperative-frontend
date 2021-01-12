@@ -48,7 +48,10 @@ class UserInfoForm extends
                 </label>
                 <br />
                 <label>
-                    Post: <input
+
+
+                   Post: <input
+
                         name="post"
                         value={this.state.post}
                         onChange={this.handleChange}

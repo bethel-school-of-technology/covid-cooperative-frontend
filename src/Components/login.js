@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 
 
@@ -36,8 +35,8 @@ class Login extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='email' placeholder='email...' required onChange={this.handleChange} />'
-                    <input type='password' name='password' placeholder='password...' required onChange={this.handleChange} />'
+                <label>Email :</label><input type='text' name='email' placeholder='email...' required onChange={this.handleChange} />
+                <label>Password :</label><input type='password' name='password' placeholder='password...' required onChange={this.handleChange} />
                    <input type='submit' value='Submit' />
                 </form>
             </div>
