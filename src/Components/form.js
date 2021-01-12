@@ -12,6 +12,8 @@ class Form extends Component {
             firstName: "",
             lastName: "",
             email: "",
+            city: "",
+            state: "",
             password: ""
 
         }
@@ -31,6 +33,16 @@ class Form extends Component {
     emailhandler = (event) => {
         this.setState({
             email: event.target.value
+        })
+    }
+    cityhandler = (event) => {
+        this.setState({
+            city: event.target.value
+        })
+    }
+    statehandler = (event) => {
+        this.setState({
+            state: event.target.value
         })
     }
     passwordhandler = (event) => {
@@ -54,7 +66,7 @@ class Form extends Component {
         event.preventDefault();
         console.log('submitting form')
 
-        let data = await fetch('http://localhost:3000/participants/signup', {
+        let data = await fetch('http://localhost:3001/participants/signup', {
             method: 'POST',
             credentials: 'include',
             headers: {

@@ -14,7 +14,7 @@ class Login extends React.Component {
     handleSubmit = async (e) => {
         e.preventDefault(); 
 
-        let data = await fetch('http://localhost:3000/participants/login', {
+        let data = await fetch('http://localhost:3001/participants/login', {
             method: 'POST',
             credentials: 'include',
             headers: {
