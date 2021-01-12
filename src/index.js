@@ -27,6 +27,7 @@ function NINJA() {
           <li><Link to="/form">Form</Link></li>
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/post">Post</Link></li>
+          <li><Link to="/postFeed">Post Feed </Link></li>
 
         </ul>
 

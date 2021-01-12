@@ -2,18 +2,14 @@ import React from 'react';
 
 class postFeed extends React.Component {
     state = {
-        posts: [ ]
+        posts: []
     }
 
     //FETCH TO GET POSTS FROM BACKEND
-
-
-
     render() {
-        
         const { posts } = this.state;
         // ? () : () => This (?) means it is a true or false statement. What's in the first 
-        // set of parenthesis if it's true, and do in the second parenthesis if it's false 
+        // set of parenthesis if it's true, and do in the second parenthesis if it's false
         const allPosts = posts.length ? (
             posts.map(post => {
                 return (
@@ -32,7 +28,7 @@ class postFeed extends React.Component {
 
         return (
             <div className="container">
-                <h4 className="center">Post Feed</h4>
+                <h4 className="center">POST FEED</h4>
                 {allPosts}
             </div>
         )
