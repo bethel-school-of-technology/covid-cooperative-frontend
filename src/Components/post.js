@@ -16,6 +16,18 @@ class UserInfoForm extends
         };
     }
 
+    componentDidMount() {
+        // Simple POST request with a JSON body using fetch
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: this.state.username, title: this.state.title, post: this.state.post  })
+        };
+        fetch('https://localhost:3001/post', requestOptions)
+            .then(response => response.json())
+            .then(data => this.setState({ postId: data.id }));
+    };
+
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
 
@@ -27,6 +39,7 @@ class UserInfoForm extends
             "Post:" + this.state.post);
         event.preventDefault();
     }
+    
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -64,10 +77,14 @@ class UserInfoForm extends
     }
 }
 
+
+
 //ReactDOM.render(<UserInfoForm />,
    // document.getElementById("root"));
 
     export default UserInfoForm;
+
+    
 
 
     // <label>
