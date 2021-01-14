@@ -10,6 +10,7 @@
         "axois": "0.0.1-security",
         "babel-cli": "^6.26.0",
         "babel-preset-react-app": "^3.1.2",
+        "jquery": "^3.5.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-router-dom": "^5.2.0",

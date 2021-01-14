@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
+import '../Components/unAuth.css'
 
 
 // Below is the form to signup. 
@@ -43,7 +44,7 @@ class Form extends Component {
         alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
         console.log(this.state);
         this.setState({
-//routIng
+            //routIng
             state: event.target.value
         })
     }
@@ -60,7 +61,7 @@ class Form extends Component {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ firstname: this.state.firstName, lastname: this.state.lastName, email: this.state.email, password: this.state.password, city: this.state.city, state: this.state.state})
+            body: JSON.stringify({ firstname: this.state.firstName, lastname: this.state.lastName, email: this.state.email, password: this.state.password, city: this.state.city, state: this.state.state })
         })
 
         let participant = await data.json({});
@@ -79,39 +80,73 @@ class Form extends Component {
                 lastName: "",
                 email: "",
                 password: "",
-                city: "", 
-                state: "", 
+                city: "",
+                state: "",
             })
         }
         else {
             window.alert('error');
         }
         event.preventDefault()
-      //dev
+        //dev
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={(e) => this.handleSubmit(e)}>
-                <form onSubmit={this.handleSubmit}>
-                    <h1>User Registration</h1>
-                    <label>FirstName :</label> <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..." /><br />
-                    <label>LastName :</label> <input type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="LastName..." /><br />
-                    <label>Email :</label> <input type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
-                    <label>City :</label> <input type="text" value={this.state.city} onChange={this.cityhandler} placeholder="City..." /><br />
-                    <label>State :</label> <input type="text" value={this.state.state} onChange={this.statehandler} placeholder="State..." /><br />
-                    <label>Password :</label> <input type="password" value={this.state.password} onChange={this.passwordhandler} placeholder="Password..." /><br />
-                    <input type="submit" value="Submit" />
-                </form>
-                </form>
+                <div className="sidenav">
+                    <div className="createPost-main-text ">
+                        <h1 className="CC">Covid Cooperative</h1>
+                        <br />
+                        <br />
+                        <h2 className="h2Login"> Register Page </h2>
+                        <p> Please Register and Login to access this page.</p>
+                    </div>
+                </div>
+                <div className="main">
+                    <div className="col-md-6 col-sm-12">
+                        <div className="register-form">
+                            <form onSubmit={(e) => this.handleSubmit(e)}>
+                                <form onSubmit={this.handleSubmit}>
+                                    <h2>User Registration</h2>
+                                    <div className="form-group">
+                                        <label>First Name:</label>
+                                        <input className="form-control" type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="First Name..." /><br />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Last Name:</label>
+                                        <input className="form-control" type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="Last Name..." /><br />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Email:</label>
+                                        <input className="form-control" type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>City:</label>
+                                        <input className="form-control" type="text" value={this.state.city} onChange={this.cityhandler} placeholder="City..." /><br />
+                                    </div>
+                                    <div className="form-group"> 
+                                        <label>State:</label>
+                                        <input className="form-control" type="text" value={this.state.state} onChange={this.statehandler} placeholder="State..." /><br />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Password:</label>
+                                        <input className="form-control" type="password" value={this.state.password} onChange={this.passwordhandler} placeholder="Password..." /><br />
+                                    </div>
+                                    <input className="btn btn-black loginButton" type="submit" value="Submit" />
+                                    <a href="http://localhost:3000/login"><input className="btn btn-secondary registerButton" type="submit" value="Login" /></a>
+                                </form>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         )
     }
 }
 
-export default Form; 
+export default Form;
 
 
 /*
@@ -191,6 +226,6 @@ ReactDOM.render(<UserInfoForm />,
     document.getElementById("root"));
 
 
-// export default Form; 
+// export default Form;
 
 */
