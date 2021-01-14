@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { useHistory, Link } from "react-router-dom";
+
+
 class postFeed extends React.Component {
     state = {
         posts: [ ]
@@ -7,7 +10,18 @@ class postFeed extends React.Component {
 
     //FETCH TO GET POSTS FROM BACKEND
 
-
+    componentDidMount() {
+        // Simple POST request with a JSON body using fetch
+        const requestOptions = {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+           // body: JSON.stringify({ title: this.state.title, post: this.state.post  })
+                // username: this.state.username
+        };
+        fetch('https://localhost:3001/allPosts', requestOptions)
+            .then(response => response.json())
+            .then(data => this.setState({ postId: data.id }));
+    };
 
     render() {
         
