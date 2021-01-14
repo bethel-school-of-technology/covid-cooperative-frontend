@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .nav-item {
     display: inline; 
@@ -5,11 +6,14 @@
     
 }
 
+=======
+>>>>>>> bd046748ae6d684e6ee2059b3f038022faa4d9f0
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-family: fantasy;
 }
 
 body {
+<<<<<<< HEAD
     color: gold;
 }
 
@@ -17,3 +21,102 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+=======
+    font-family: fantasy;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: gold;
+}
+
+body {
+    background-color: black;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+Form {
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bg {
+    position: fixed;
+    top: 1em;
+    right: 30%;
+    bottom: 0;
+    left: 30%;
+    margin: 0 -600px;
+    background-size: cover;
+    z-index: -1;
+}
+
+
+/* Add some padding on document's body to prevent the content
+    to go underneath the header and footer */
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+header {
+    background-color: #f1f1f1;
+    /* Grey background */
+    padding: 50px 10px;
+    /* Some padding */
+    color: black;
+    text-align: center;
+    /* Centered text */
+    font-size: 90px;
+    /* Big font size */
+    font-weight: bold;
+    position: fixed;
+    /* Fixed position - sit on top of the page */
+    top: 0;
+    width: 100%;
+    /* Full width */
+    transition: 0.2s;
+    /* Add a transition effect (when scrolling - and font size is decreased) */
+}
+
+.body {
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+}
+
+footer {
+    background-color: #f1f1f1;
+    /* Grey background */
+    padding: 50px 10px;
+    /* Some padding */
+    color: black;
+    text-align: center;
+    /* Centered text */
+    font-size: 90px;
+    /* Big font size */
+    font-weight: bold;
+    position: fixed;
+    /* Fixed position - sit on top of the page */
+    top: 0;
+    width: 100%;
+    /* Full width */
+    transition: 0.2s;
+    /* Add a transition effect (when scrolling - and font size is decreased) */
+}
+>>>>>>> bd046748ae6d684e6ee2059b3f038022faa4d9f0
