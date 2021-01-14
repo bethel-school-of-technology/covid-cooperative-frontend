@@ -95,7 +95,7 @@ class Form extends Component {
         return (
             <div>
                 <div className="sidenav">
-                    <div className="createPost-main-text ">
+                    <div className="form-main-text ">
                         <h1 className="CC">Covid Cooperative</h1>
                         <br />
                         <br />
