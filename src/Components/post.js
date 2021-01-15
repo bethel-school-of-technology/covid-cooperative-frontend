@@ -47,13 +47,13 @@ class UserInfoForm extends
         return (
             <div>
                 <div className="sidenav">
-                    <div className="login-main-text ">
+                    <div className="post-main-text ">
                         <h1 className="CC">Covid Cooperative</h1>
                     </div>
                 </div>
                 <div className="main">
                     <div className="col-md-6 col-sm-12">
-                        <div className="cretePost-form"></div>
+                        <div className="createPost-form"></div>
                         <form onSubmit={this.handleSubmit}>
                             <h2>Create Post</h2>
                             <div className="form-group">
