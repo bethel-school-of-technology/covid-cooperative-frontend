@@ -17,18 +17,19 @@ body {
   .main {
     padding: 0px 10px;
   }
+
+  .card {
+    padding: 5px; 
+    margin: 10px; 
+  }
   
   
   @media screen and (max-width: 450px) {
-    .login-form {
+    .createPost-form {
       margin-top: 10px;
       margin-bottom: 30px;
     }
   
-    .register-form {
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
   }
   
   @media screen and (min-width: 768px) {
@@ -51,15 +52,11 @@ body {
     .h2Login{
       letter-spacing: 5px;
     }
-    .login-form {
+    .createPost-form {
       margin-top: 200px;
       width: 100%;
     }
   
-    .register-form {
-      margin-top: 200px;
-      width: 100%;
-    }
   }
   
   .login-main-text, .form-main-text {

@@ -53,7 +53,7 @@ class UserInfoForm extends
                 </div>
                 <div className="main">
                     <div className="col-md-6 col-sm-12">
-                        <div className="cretePost-form"></div>
+                        <div className="createPost-form"></div>
                         <form onSubmit={this.handleSubmit}>
                             <h2>Create Post</h2>
                             <div className="form-group">

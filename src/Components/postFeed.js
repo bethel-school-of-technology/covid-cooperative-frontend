@@ -22,7 +22,7 @@ export default function PostFeed() {
         }
 
         getAllPosts()
-        
+
     }, [])
 
     // if (posts.length === 0) {
@@ -32,20 +32,30 @@ export default function PostFeed() {
     return (
 
         <div className="">
-            <h1 className="header">My Posts</h1>
-            
-            <div className="container">
-                {posts.map((post, index) => {
-                    return (
-                        <div className="postHolder" key={index}>
-                            <div className="postContent">
-                                <h3>{post.title}</h3>
-                                <p>{post.post}</p>
-                            </div>
-                        </div>
-                    );
-                })}
+            <div className="sidenav">
+                <div className="login-main-text ">
+                    <h1 className="CC">Covid Cooperative</h1>
+                </div>
             </div>
+            <div className="main">
+                <div className="col-md-6 col-sm-12"></div>
+                <h1 className="header">Posts</h1>
+                <div className="container">
+                    {posts.map((post, index) => {
+                        return (
+                            <div className="card">
+                                <div className="postHolder" key={index}>
+                                    <div className="card-body">
+                                        <h3 className="card-title">{post.title}</h3>
+                                        <p className="card-title">{post.post}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
 
         </div>
 
