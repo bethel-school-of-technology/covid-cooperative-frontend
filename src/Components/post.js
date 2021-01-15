@@ -10,8 +10,8 @@ class UserInfoForm extends
     constructor() {
         super();
         this.state = {
-            username: "",
-            // category: "",
+            //username: "",
+           // category: "",
             title: "",
             post: ""
         };
@@ -22,7 +22,8 @@ class UserInfoForm extends
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: this.state.username, title: this.state.title, post: this.state.post  })
+            body: JSON.stringify({ title: this.state.title, post: this.state.post  })
+                // username: this.state.username
         };
         fetch('https://localhost:3001/post', requestOptions)
             .then(response => response.json())
@@ -34,8 +35,9 @@ class UserInfoForm extends
 
     }
     handleSubmit = (event) => {
-        alert("Username:" + this.state.username +
-            // "Category:" + this.state.category +
+        alert(
+            // "Username:" + this.state.username +
+           // "Category:" + this.state.category +
             "Title:" + this.state.title +
             "Post:" + this.state.post);
         event.preventDefault();
