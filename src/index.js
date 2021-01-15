@@ -6,7 +6,7 @@ import Home from './Components/home.js';
 import Form from './Components/form.js';
 import Login from './Components/login.js';
 import Post from './Components/post.js';
-import postFeed from './Components/postFeed'
+import postFeed from './Components/postFeed.js'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 
@@ -22,15 +22,16 @@ function NINJA() {
   return (
     <Router>
       <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/form">Form</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/post">Post</Link></li>
+        <ul className="container nav justify-content-end">
+          <li className="nav-item"><Link to="/">Home</Link></li>
+          <li className="nav-item"><Link to="/form">Form</Link></li>
+          <li className="nav-item"><Link to="/login">Login</Link></li>
+          <li className="nav-item"><Link to="/post">Post</Link></li>
+          <li className="nav-item"><Link to="/postFeed">Post Feed </Link></li>
 
         </ul>
 
-        <hr />
+        
         <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />

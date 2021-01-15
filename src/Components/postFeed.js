@@ -25,8 +25,6 @@ export default function PostFeed() {
         
     }, [])
 
-    
-
     // if (posts.length === 0) {
     //     return <h2>Loading</h2>
     // }
