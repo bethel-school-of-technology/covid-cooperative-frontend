@@ -1,54 +1,56 @@
 import React, { useState, useEffect } from "react";
-import {  Link } from "react-router-dom";
-import { useAppContext } from "../libs/contextLib";
 
 
-export default function postFeed() {
+export default function PostFeed() {
 
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        const getPosts = async (e) => {
+        console.log(posts)
+        const getAllPosts = async (e) => {
             try {
-                let data = await fetch("http://localhost:3000/quotes", { credentials: 'include' })
+                let data = await fetch("http://localhost:3001/posts/allPosts", { credentials: 'include' })
                 let postsData = await data.json();
 
-                console.log(postsData)
+                console.log(postsData.data)
 
-                setPosts(postsData.posts)
+                setPosts(postsData.data.allPosts)
+                console.log(posts)
             } catch (err) {
                 console.log(err)
             }
         }
 
-        getPosts()
+        getAllPosts()
+        
     }, [])
 
-    if (posts.length === 0) {
-        return <h2>Loading</h2>
-    }
+    
+
+    // if (posts.length === 0) {
+    //     return <h2>Loading</h2>
+    // }
 
     return (
-        <>
-            <div className="w-2/3 mx-auto">
-                <h1 className="text-2xl font-bold mx-2">My Posts</h1>
 
-                <div className=" ">
-                    <div className="flex flex-wrap w-full">
-                        {posts.map((post, idx) => {
-                            return (
-                                <div className="w-1/3" key={idx}>
-                                    <Link to={`/edit/${post.id}`} className="block p-2 m-2 rounded bg-white">
-                                        <div className="text-xl">{post.title}</div>
-                                        <div className="text-xs">{post.post}</div>
-                                    </Link>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+        <div className="">
+            <h1 className="header">My Posts</h1>
+            
+            <div className="container">
+                {posts.map((post, index) => {
+                    return (
+                        <div className="postHolder" key={index}>
+                            <div className="postContent">
+                                <h3>{post.title}</h3>
+                                <p>{post.post}</p>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
-        </>
+
+        </div>
+
     );
 
 }
@@ -62,20 +64,9 @@ export default function postFeed() {
 //         posts: [ ]
 //     }
 
-//     //FETCH TO GET POSTS FROM BACKEND
+//    PLACE FETCH IN HERE
 
-//     componentDidMount() {
-//         // Simple POST request with a JSON body using fetch
-//         const requestOptions = {
-//             method: 'GET',
-//             headers: { 'Content-Type': 'application/json' },
-//            // body: JSON.stringify({ title: this.state.title, post: this.state.post  })
-//                 // username: this.state.username
-//         };
-//         fetch('https://localhost:3001/allPosts', requestOptions)
-//             .then(response => response.json())
-//             .then(data => this.setState({ postId: data.id }));
-//     };
+
 
 //     render() {
 
@@ -83,7 +74,7 @@ export default function postFeed() {
 //             return (
 //                 <div className="postHolder" key={post._id}>
 //                 <div className="postContent">
-//                     <div className="postTitle">{post.title}</div>
+//                     <h2 className="postTitle">{post.title}</h2>
 //                     <p>{post.post}</p>
 //                 </div>
 //             </div>
