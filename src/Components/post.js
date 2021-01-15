@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../Components/Auth.css'
 
 //Below is the form to post.
 
@@ -10,7 +11,7 @@ class UserInfoForm extends
         super();
         this.state = {
             username: "",
-           // category: "",
+            // category: "",
             title: "",
             post: ""
         };
@@ -34,7 +35,7 @@ class UserInfoForm extends
     }
     handleSubmit = (event) => {
         alert("Username:" + this.state.username +
-           // "Category:" + this.state.category +
+            // "Category:" + this.state.category +
             "Title:" + this.state.title +
             "Post:" + this.state.post);
         event.preventDefault();
@@ -42,37 +43,52 @@ class UserInfoForm extends
     
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <br />
-                <label>
-                    Name: <input
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.handleChange}
-                    />
-                </label>
-                <br />
-                <label>
-                    Title: <input
-                        name="title"
-                        value={this.state.title}
-                        onChange={this.handleChange}
-                    />
-                </label>
-                <br />
-                <label>
-
-
-                   Post: <input
-
-                        name="post"
-                        value={this.state.post}
-                        onChange={this.handleChange}
-                    />
-                </label>
-                <br />
-                <input type="submit" value="Submit" />
-            </form>
+            <div>
+                <div className="sidenav">
+                    <div className="login-main-text ">
+                        <h1 className="CC">Covid Cooperative</h1>
+                    </div>
+                </div>
+                <div className="main">
+                    <div className="col-md-6 col-sm-12">
+                        <div className="cretePost-form"></div>
+                        <form onSubmit={this.handleSubmit}>
+                            <h2>Create Post</h2>
+                            <div className="form-group">
+                                <label>
+                                    Name: <input
+                                        className="form-control"
+                                        name="username"
+                                        value={this.state.username}
+                                        onChange={this.handleChange}
+                                    />
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <label >
+                                    Title: <input
+                                        className="form-control"
+                                        name="title"
+                                        value={this.state.title}
+                                        onChange={this.handleChange}
+                                    />
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <label >
+                                    Post: <input
+                                        className="form-control"
+                                        name="post"
+                                        value={this.state.post}
+                                        onChange={this.handleChange}
+                                    />
+                                </label>
+                            </div>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
@@ -82,7 +98,7 @@ class UserInfoForm extends
 //ReactDOM.render(<UserInfoForm />,
    // document.getElementById("root"));
 
-    export default UserInfoForm;
+export default UserInfoForm;
 
     
 
