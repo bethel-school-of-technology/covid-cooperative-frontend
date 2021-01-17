@@ -25,10 +25,6 @@ export default function PostFeed() {
 
     }, [])
 
-    // if (posts.length === 0) {
-    //     return <h2>Loading</h2>
-    // }
-
     return (
 
         <div className="">
@@ -67,36 +63,4 @@ export default function PostFeed() {
 
 
 
-// class postFeed extends React.Component {
-//     state = {
-//         posts: [ ]
-//     }
-
-//    PLACE FETCH IN HERE
-
-
-
-//     render() {
-
-//         const allPosts = this.state.posts.map(post => {
-//             return (
-//                 <div className="postHolder" key={post._id}>
-//                 <div className="postContent">
-//                     <h2 className="postTitle">{post.title}</h2>
-//                     <p>{post.post}</p>
-//                 </div>
-//             </div>
-//             )
-//         });
-
-//         return (
-//             <div className="container">
-//                 <h4 className="center">POST FEED</h4>
-//                 {allPosts}
-//             </div>
-//         )
-//     }
-
-
-// }
 

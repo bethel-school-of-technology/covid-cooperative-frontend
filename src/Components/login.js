@@ -49,20 +49,7 @@ class Login extends React.Component {
                 <div className="main">
                     <div className="col-md-6 col-sm-12">
                         <div className="login-form ">
-                            {/* <form onSubmit={this.handleSubmit} className="">
-                                <h2 className="h2Login">Login</h2>
-                                <div className="form-group"> 
-                                    <label>Email: </label>
-                                    <input className="form-control" type='text' name='email' placeholder=' Email...' required onChange={this.handleChange} />
-                                </div>
-                                <div className="form-group">
-                                    <label> Password: </label>
-                                    <input className="form-control" type='password' name='password' placeholder=' Password...' required onChange={this.handleChange} />
-                                </div>
-                                <input className="btn btn-black loginButton" type='submit' value='Submit' />
-                                <a href="http://localhost:3000/form"><input className="btn btn-secondary registerButton" type='Register' value='Register' /></a>
-
-                            </form> */}
+                            {}
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
