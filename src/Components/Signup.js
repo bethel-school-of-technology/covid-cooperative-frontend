@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Link from 'react-router-dom';
+
 //import ReactDOM from 'react-dom';
 import '../Components/unAuth.css'
 
 
 // Below is the form to signup. 
 
-class Form extends Component {
+class Signup extends Component {
     constructor(props) {
         super(props)
 
@@ -21,36 +23,41 @@ class Form extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    firsthandler = (event) => {
-        this.setState({
-            firstName: event.target.value
-        })
+    handleChange = (e) => {
+        const { name, value } = e.target
+        this.setState({ [name]: value })
     }
-    lasthandler = (event) => {
-        this.setState({
-            lastName: event.target.value
-        })
-    }
-    emailhandler = (event) => {
-        this.setState({
-            email: event.target.value
-        })
-    }
-    cityhandler = (event) => {
-        this.setState({
-            city: event.target.value
-        })
-    }
-    statehandler = (event) => {
-        this.setState({
-            state: event.target.value
-        })
-    }
-    passwordhandler = (event) => {
-        this.setState({
-            password: event.target.value
-        })
-    }
+    // firsthandler = (event) => {
+    //     this.setState({
+    //         firstName: event.target.value
+    //     })
+    // }
+    // lasthandler = (event) => {
+    //     this.setState({
+    //         lastName: event.target.value
+    //     })
+    // }
+    // emailhandler = (event) => {
+    //     this.setState({
+    //         email: event.target.value
+    //     })
+    // }
+    // cityhandler = (event) => {
+    //     this.setState({
+    //         city: event.target.value
+    //     })
+    // }
+    // statehandler = (event) => {
+    //     this.setState({
+    //         state: event.target.value
+    //     })
+    // }
+    // passwordhandler = (event) => {
+    //     console.log(event)
+    //     this.setState({
+    //         password: event.target.value
+    //     })
+    // }
 
     handleSubmit = (event) => {
         alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
@@ -80,11 +87,7 @@ class Form extends Component {
 
         console.log(participant)
 
-        if (participant.hasOwnProperty("error")) {
-            console.log(participant.error)
-        }
-
-        if (participant.created) {
+        if (participant.status === 200) {
             window.alert(`${this.state.firstName} ${this.state.lastName}  Signed Up!`)
             console.log(this.state);
             this.setState({
@@ -119,35 +122,35 @@ class Form extends Component {
                     <div className="col-md-6 col-sm-12">
                         <div className="register-form">
                             <form onSubmit={(e) => this.handleSubmit(e)}>
-                                <form onSubmit={this.handleSubmit}>
+                                <div onSubmit={this.handleSubmit}>
                                     <h2>User Registration</h2>
                                     <div className="form-group">
                                         <label>First Name:</label>
-                                        <input className="form-control" type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="First Name..." /><br />
+                                        <input className="form-control" name="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} placeholder="First Name..." /><br />
                                     </div>
                                     <div className="form-group">
                                         <label>Last Name:</label>
-                                        <input className="form-control" type="text" value={this.state.lastName} onChange={this.lasthandler} placeholder="Last Name..." /><br />
+                                        <input className="form-control" name="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} placeholder="Last Name..." /><br />
                                     </div>
                                     <div className="form-group">
                                         <label>Email:</label>
-                                        <input className="form-control" type="text" value={this.state.email} onChange={this.emailhandler} placeholder="Email..." /><br />
+                                        <input className="form-control" name="email" type="text" value={this.state.email} onChange={this.handleChange} placeholder="Email..." /><br />
                                     </div>
                                     <div className="form-group">
                                         <label>City:</label>
-                                        <input className="form-control" type="text" value={this.state.city} onChange={this.cityhandler} placeholder="City..." /><br />
+                                        <input className="form-control" name="city" type="text" value={this.state.city} onChange={this.handleChange} placeholder="City..." /><br />
                                     </div>
                                     <div className="form-group"> 
                                         <label>State:</label>
-                                        <input className="form-control" type="text" value={this.state.state} onChange={this.statehandler} placeholder="State..." /><br />
+                                        <input className="form-control" name="state" type="text" value={this.state.state} onChange={this.handleChange} placeholder="State..." /><br />
                                     </div>
                                     <div className="form-group">
                                         <label>Password:</label>
-                                        <input className="form-control" type="password" value={this.state.password} onChange={this.passwordhandler} placeholder="Password..." /><br />
+                                        <input className="form-control" name="password" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Password..." /><br />
                                     </div>
                                     <input className="btn btn-black loginButton" type="submit" value="Submit" />
                                     <a href="http://localhost:3000/login"><input className="btn btn-secondary registerButton" type="submit" value="Login" /></a>
-                                </form>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -158,7 +161,7 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default Signup;
 
 
 /*

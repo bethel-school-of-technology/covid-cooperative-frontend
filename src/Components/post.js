@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../Components/Auth.css'
 
 //Below is the form to post.
@@ -17,7 +16,19 @@ class UserInfoForm extends
         };
     }
 
-    componentDidMount() {
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+
+    }
+
+    handleSubmit = (event) => {
+        // // alert(
+        //     // "Username:" + this.state.username +
+        //    // "Category:" + this.state.category +
+        //     "Title:" + this.state.title +
+        //     "Post:" + this.state.post);
+        event.preventDefault();
+        
         // Simple POST request with a JSON body using fetch
         const requestOptions = {
             method: 'POST',
@@ -25,22 +36,18 @@ class UserInfoForm extends
             body: JSON.stringify({ title: this.state.title, post: this.state.post  })
                 // username: this.state.username
         };
-        fetch('https://localhost:3001/post', requestOptions)
+        
+        fetch('http://localhost:3001/posts', requestOptions)
             .then(response => response.json())
-            .then(data => this.setState({ postId: data.id }));
-    };
-
-    handleChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-
-    }
-    handleSubmit = (event) => {
-        alert(
-            // "Username:" + this.state.username +
-           // "Category:" + this.state.category +
-            "Title:" + this.state.title +
-            "Post:" + this.state.post);
-        event.preventDefault();
+            .then(data => {
+                console.log(data)
+                if (data.status === 200) {
+                    console.log("Successful")
+                } else {
+                    console.log("UnSuccessful")
+                }
+                this.setState({ postId: data.id })
+            });
     }
     
     render() {
@@ -53,10 +60,10 @@ class UserInfoForm extends
                 </div>
                 <div className="main">
                     <div className="col-md-6 col-sm-12">
-                        <div className="createPost-form"></div>
+                        <div className="post-form"></div>
                         <form onSubmit={this.handleSubmit}>
                             <h2>Create Post</h2>
-                            <div className="form-group">
+                            {/* <div className="form-group">
                                 <label>
                                     Name: <input
                                         className="form-control"
@@ -65,7 +72,7 @@ class UserInfoForm extends
                                         onChange={this.handleChange}
                                     />
                                 </label>
-                            </div>
+                            </div> */}
                             <div className="form-group">
                                 <label >
                                     Title: <input

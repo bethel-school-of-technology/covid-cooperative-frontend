@@ -25,7 +25,7 @@ body {
   
   
   @media screen and (max-width: 450px) {
-    .createPost-form {
+    .post-form {
       margin-top: 10px;
       margin-bottom: 30px;
     }
@@ -49,29 +49,16 @@ body {
       letter-spacing: 10px;
     }
   
-    .h2Login{
-      letter-spacing: 5px;
-    }
-    .createPost-form {
+    .post-form {
       margin-top: 200px;
-      width: 100%;
+      width: 100%
     }
   
+    .home-main-text , .post-main-text, .form-main-text {
+      margin-top: 150px;
+      padding: 60px;
+      color: #fff;
+    }
   }
   
-  .login-main-text, .form-main-text {
-    margin-top: 150px;
-    padding: 60px;
-    color: #fff;
-  }
-  
-  .login-main-text h2 {
-    font-weight: 300;
-  }
-  
-  .loginButton {
-    background-color: #000;
-    color: #fff;
-    margin: 5px;
-  }
   
