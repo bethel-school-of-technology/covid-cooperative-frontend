@@ -1,5 +1,7 @@
 import React from 'react';
 import '../Components/unAuth.css'
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
 
 
 class Login extends React.Component {
@@ -47,7 +49,7 @@ class Login extends React.Component {
                 <div className="main">
                     <div className="col-md-6 col-sm-12">
                         <div className="login-form ">
-                            <form onSubmit={this.handleSubmit} className="">
+                            {/* <form onSubmit={this.handleSubmit} className="">
                                 <h2 className="h2Login">Login</h2>
                                 <div className="form-group"> 
                                     <label>Email: </label>
@@ -60,7 +62,27 @@ class Login extends React.Component {
                                 <input className="btn btn-black loginButton" type='submit' value='Submit' />
                                 <a href="http://localhost:3000/form"><input className="btn btn-secondary registerButton" type='Register' value='Register' /></a>
 
-                            </form>
+                            </form> */}
+                            <Form>
+                                <Form.Group controlId="formBasicEmail">
+                                    <Form.Label>Email address</Form.Label>
+                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Text className="text-muted">
+                                        We'll never share your email with anyone else.
+                                    </Form.Text>
+                                </Form.Group>
+
+                                <Form.Group controlId="formBasicPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" placeholder="Password" />
+                                </Form.Group>
+                                <Form.Group controlId="formBasicCheckbox">
+                                    <Form.Check type="checkbox" label="Check me out" />
+                                </Form.Group>
+                                <Button variant="primary" type="submit">
+                                    Submit
+  </Button>
+                            </Form>
                         </div>
                     </div>
                 </div>

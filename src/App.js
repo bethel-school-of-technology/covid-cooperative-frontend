@@ -1,5 +1,5 @@
 import './App.css';
-import Form from './Components/form.js';
+import Signup from './Components/Signup.js';
 
 
 
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form />
+      <Signup />
    
     </div>
   );
