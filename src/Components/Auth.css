@@ -22,13 +22,6 @@ body {
     padding: 5px; 
     margin: 10px; 
   }
-
-
-  .homepage {
-    letter-spacing: 2px;
-    margin-right: 40px;
-    padding-right: 40px;
-  }
   
   
   @media screen and (max-width: 450px) {
@@ -36,14 +29,7 @@ body {
       margin-top: 10px;
       margin-bottom: 30px;
     }
-    
-    .homepage {
-      letter-spacing: 2px;
-      margin-right: 40px;
-      padding-right: 40px;
-      padding-left: px;
-      margin-left: 40px;
-    }
+  
   }
   
   @media screen and (min-width: 768px) {

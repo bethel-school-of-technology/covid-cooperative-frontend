@@ -1,31 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
+import Nav from 'react-bootstrap/Nav';
+import Image from 'react-bootstrap/Image'; 
 
-export default function Nav() {
+const navStyle = {
+  height: "50px",
+}
+
+function Navigation() {
   return (
-    // <div>
-    //   <ul className="container nav justify-content-end">
-    //     <li className="nav-item">
-    //       <Link to="/"> Home </Link>
-    //     </li>
-    //     <li className="nav-item">
-    //       <Link to="/form"> Form </Link>
-    //     </li>
-    //     <li className="nav-item">
-    //       <Link to="/login"> Login </Link>
-    //     </li>
-    //     <li className="nav-item">
-    //       <Link to="/post"> Post </Link>
-    //     </li>
-    //     <li className="nav-item">
-    //       <Link to="/postFeed"> Post Feed </Link>
-    //     </li>
-    //   </ul>
-    // </div>
-    <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="/home">Navbar</Navbar.Brand>
-      <Nav className="mr-auto">
+    <Navbar className="NavBar align-content-center" bg="dark" sticky="top" variant="dark" style={navStyle}>
+
+      <Navbar.Brand href="/home"><Image src="cc.png"roundedCircle></Image></Navbar.Brand>
+      <Nav className="mr-auto justify-content-end">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/form">Form</Nav.Link>
         <Nav.Link href="/login">Login</Nav.Link>
@@ -35,3 +23,5 @@ export default function Nav() {
     </Navbar>
   );
 }
+
+export default Navigation; 

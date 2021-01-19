@@ -27,10 +27,13 @@ class Login extends React.Component {
         })
 
         let participant = await data.json();
+        console.log(participant)
 
-        if (!participant.hasOwnProperty('message')) {
-            console.log('Welcome Back')
+        if (participant.status === 200) {
+            window.alert(`${this.state.firstName} ${this.state.lastName}  Logged In!`)
+            console.log(this.state);
         }
+
     }
     render() {
         return (
@@ -48,7 +51,7 @@ class Login extends React.Component {
                     <div className="col-md-6 col-sm-12">
                         <div className="login-form ">
                         <h2>Login</h2>
-                            <Form>
+                            <Form onSubmit={this.handleSubmit}>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
                                     <Form.Control type="email" name="email" value={this.state.email} 
