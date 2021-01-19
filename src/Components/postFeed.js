@@ -37,10 +37,10 @@ export default function PostFeed() {
                 <div className="col-md-6 col-sm-12"></div>
                 <h1 className="header">Posts</h1>
                 <div className="container">
-                    {posts.map((post, index) => {
+                    {posts.map((post) => {
                         return (
-                            <div className="card">
-                                <div className="postHolder" key={index}>
+                            <div className="card" key={post._id}>
+                                <div className="postHolder">
                                     <div className="card-body">
                                         <h3 className="card-title">{post.title}</h3>
                                         <p className="card-title">{post.post}</p>
