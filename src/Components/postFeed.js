@@ -30,7 +30,7 @@ export default function PostFeed() {
         <div className="">
             <div className="sidenav">
                 <div className="login-main-text ">
-                    <h1 className="CC">Covid Cooperative</h1>
+                    <h1 className="CC">Covid Co-Op</h1>
                 </div>
             </div>
             <div className="main">

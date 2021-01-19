@@ -31,15 +31,13 @@ class Login extends React.Component {
         if (!participant.hasOwnProperty('message')) {
             console.log('Welcome Back')
         }
-
-
     }
     render() {
         return (
             <div className="">
                 <div className="sidenav">
                     <div className="login-main-text ">
-                        <h1 className="CC">Covid Cooperative</h1>
+                        <h1 className="CC">Covid Co-Op</h1>
                         <br />
                         <br />
                         <h2 className="h2Login"> Login Page </h2>
@@ -49,11 +47,13 @@ class Login extends React.Component {
                 <div className="main">
                     <div className="col-md-6 col-sm-12">
                         <div className="login-form ">
-                            {}
+                        <h2>Login</h2>
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control type="email" name="email" value={this.state.email} 
+                                    onChange={this.handleChange}placeholder="Enter email" 
+                                    />
                                     <Form.Text className="text-muted">
                                         We'll never share your email with anyone else.
                                     </Form.Text>
@@ -61,14 +61,13 @@ class Login extends React.Component {
 
                                 <Form.Group controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Form.Group>
-                                <Form.Group controlId="formBasicCheckbox">
-                                    <Form.Check type="checkbox" label="Check me out" />
+                                    <Form.Control type="password" name="password" value={this.state.password} 
+                                    onChange={this.handleChange} placeholder="Enter password" 
+                                    />
                                 </Form.Group>
                                 <Button variant="primary" type="submit">
-                                    Submit
-  </Button>
+                                    Login
+                                </Button>
                             </Form>
                         </div>
                     </div>
