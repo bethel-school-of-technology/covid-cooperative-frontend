@@ -1,50 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Home from './Components/home.js';
-import Signup from './Components/Signup.js';
-import Login from './Components/login.js';
-import Post from './Components/post.js';
-import postFeed from './Components/postFeed.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import Nav from "./Components/Nav";
+import Home from "./Components/home.js";
+import Signup from "./Components/Signup.js";
+import Login from "./Components/login.js";
+import Post from "./Components/post.js";
+import postFeed from "./Components/postFeed.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
-function NINJA() {
-  return (
-    <Router>
-      <div>
-        <ul className="container nav justify-content-end">
-          <li className="nav-item"><Link to="/">Home</Link></li>
-          <li className="nav-item"><Link to="/form">Form</Link></li>
-          <li className="nav-item"><Link to="/login">Login</Link></li>
-          <li className="nav-item"><Link to="/post">Post</Link></li>
-          <li className="nav-item"><Link to="/postFeed">Post Feed </Link></li>
+// function NINJA() {
+//   return ( 
+//     <div>
+//     <Nav/>
+//     <Router>
+//       <Switch>
+//         <Route exact path="/" component={Home} />
+//         <Route path="/login" component={Login} />
+//         <Route path="/form" component={Signup} />
+//         <Route path="/post" component={Post} />
+//         <Route path="/postFeed" component={postFeed} />
+//       </Switch>
+//     </Router>
+//     </div>
+//   );
+// }
 
-        </ul>
-
-        
-        <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/form" component={Signup} />
-        <Route path="/post" component={Post} />
-        <Route path="/postFeed" component={postFeed} />
-        </Switch>
-      </div>
-    </Router>
-  );
-}
-
-ReactDOM.render(<NINJA/>, document.getElementById('root'));
-
-
+// ReactDOM.render(<NINJA />, document.getElementById("root"));
