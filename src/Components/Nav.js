@@ -6,14 +6,22 @@ import Image from 'react-bootstrap/Image';
 
 const navStyle = {
   height: "50px",
+  "padding-top": "20px", 
+  "padding-bottom": "20px",
+  "margin-top": "50px", 
+  
+}
+
+const logo = {
+  "margin-top": "50px", 
 }
 
 function Navigation() {
   return (
     <Navbar className="NavBar align-content-center" bg="dark" sticky="top" variant="dark" style={navStyle}>
 
-      <Navbar.Brand href="/home"><Image src="cc.png"roundedCircle></Image></Navbar.Brand>
-      <Nav className="mr-auto justify-content-end">
+      <Navbar.Brand href="/home"><Image className="CClogo" style={logo} src="cc.png"roundedCircle></Image></Navbar.Brand>
+      <Nav className="justify-content-end">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/form">Form</Nav.Link>
         <Nav.Link href="/login">Login</Nav.Link>
