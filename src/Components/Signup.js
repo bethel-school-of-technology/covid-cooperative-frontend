@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import Link from 'react-router-dom';
-import '../Components/unAuth.css'
+import '../Components/unAuth.css';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
+
+
 
 
 // Below is the form to signup. 
@@ -78,7 +82,7 @@ class Signup extends Component {
             <div>
                 <div className="sidenav">
                     <div className="form-main-text ">
-                        <h1 className="CC">Covid Cooperative</h1>
+                        <h1 className="CC">Covid Co-Op</h1>
                         <br />
                         <br />
                         <h2 className="h2Login"> Register Page </h2>
@@ -88,10 +92,61 @@ class Signup extends Component {
                 <div className="main">
                     <div className="col-md-6 col-sm-12">
                         <div className="register-form">
-                            <form onSubmit={(e) => this.handleSubmit(e)}>
+                            <div onSubmit={(e) => this.handleSubmit(e)}>
                                 <div onSubmit={this.handleSubmit}>
                                     <h2>User Registration</h2>
-                                    <div className="form-group">
+                                    <Form>
+                                        <Form.Group controlId="formGridFirstName">
+                                            <Form.Label>First Name: </Form.Label>
+                                            <Form.Control name="firstName" value={this.state.firstName}
+                                                type="firstName" onChange={this.handleChange} placeholder="Enter first name"
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group controlId="formGridLastName">
+                                            <Form.Label>Last Name: </Form.Label>
+                                            <Form.Control name="lastName" value={this.state.lastName}
+                                                type="lastName" onChange={this.handleChange} placeholder="Enter last name"
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group controlId="formGridCity">
+                                            <Form.Label>City</Form.Label>
+                                            <Form.Control name="city" value={this.state.city}
+                                                type="city" onChange={this.handleChange} placeholder="Enter city"
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group controlId="formGridState">
+                                            <Form.Label>State</Form.Label>
+                                            <Form.Control name="state" value={this.state.state}
+                                                type="state" onChange={this.handleChange} placeholder="Enter state"
+                                            />
+                                        </Form.Group>
+
+                                        <Form.Group controlId="formGridEmail">
+                                            <Form.Label>Email</Form.Label>
+                                            <Form.Control name="email" value={this.state.email}
+                                                type="email" onChange={this.handleChange} placeholder="Enter email"
+                                            />
+                                            <Form.Text className="text-muted">
+                                                We'll never share your email with anyone else.
+                                            </Form.Text>
+                                        </Form.Group>
+
+                                        <Form.Group controlId="formGridPassword">
+                                            <Form.Label>Password</Form.Label>
+                                            <Form.Control name="password" value={this.state.password}
+                                                type="password" onChange={this.handleChange} placeholder=" Enter password"
+                                            />
+                                        </Form.Group>
+
+                                        <Button variant="primary" type="submit">
+                                            Register
+                                        </Button>
+                                    </Form>
+                                    
+                                    {/* <div className="form-group">
                                         <label>First Name:</label>
                                         <input className="form-control" name="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} placeholder="First Name..." /><br />
                                     </div>
@@ -116,9 +171,9 @@ class Signup extends Component {
                                         <input className="form-control" name="password" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Password..." /><br />
                                     </div>
                                     <input className="btn btn-black loginButton" type="submit" value="Submit" />
-                                    <a href="http://localhost:3000/login"><input className="btn btn-secondary registerButton" type="submit" value="Login" /></a>
+                                    <a href="http://localhost:3000/login"><input className="btn btn-secondary registerButton" type="submit" value="Login" /></a> */}
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
