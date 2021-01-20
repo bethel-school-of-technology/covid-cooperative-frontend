@@ -28,7 +28,10 @@ class UserInfoForm extends
         // Simple POST request with a JSON body using fetch
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json', 
+                 'Authorization': localStorage.getItem("Auth")
+             },
             body: JSON.stringify({ title: this.state.title, post: this.state.post })
         };
 

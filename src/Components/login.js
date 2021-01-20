@@ -30,8 +30,9 @@ class Login extends React.Component {
         console.log(participant)
 
         if (participant.status === 200) {
-            window.alert(`${this.state.firstName} ${this.state.lastName}  Logged In!`)
-            console.log(this.state);
+            localStorage.setItem("Auth", participant.token)
+            window.alert(`Welcome Back!`)
+            console.log(participant.status);
         }
 
     }
