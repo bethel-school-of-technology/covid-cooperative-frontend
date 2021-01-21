@@ -1,0 +1,17 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.homeSideNav {
+  height: 100vh;
+  background-color: #000;
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
+.homeMain {
+  margin: 40px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}

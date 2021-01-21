@@ -28,10 +28,10 @@ class UserInfoForm extends
         // Simple POST request with a JSON body using fetch
         const requestOptions = {
             method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json', 
-                 'Authorization': localStorage.getItem("Auth")
-             },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem("Auth")
+            },
             body: JSON.stringify({ title: this.state.title, post: this.state.post })
         };
 
@@ -51,37 +51,38 @@ class UserInfoForm extends
     render() {
         return (
             <div>
-                <div className="sidenav">
-                    <div className="post-main-text ">
-                        <h1 className="CC">Covid Co-Op</h1>
+                <div className="row">
+                    <div className="sidenav col-md-4">
+                        <div className="sideNav-main-text">
+                            <h1 className="CC">Covid Co-Op</h1>
+                        </div>
                     </div>
-                </div>
-                <div className="main">
-                    <div className="col-md-6 col-sm-12">
-                        <div className="post-form"></div>
-                        <div onSubmit={this.handleSubmit}>
-                            <h2>Create Post</h2>
-                            <Form>
-                                <Form.Group controlId="formBasicTitle">
-                                    <Form.Label>Title: </Form.Label>
-                                    <Form.Control type="title" name="title" value={this.state.title}
-                                        onChange={this.handleChange} placeholder="Enter title"
-                                    />
-                                </Form.Group>
+                    <div className="container main col-md-6 col-sm-10">
+                        <div className="col-md-8 col-sm-12">
+                            <div className="post-form"></div>
+                            <div onSubmit={this.handleSubmit}>
+                                <h2>Create Post</h2>
+                                <Form>
+                                    <Form.Group controlId="formBasicTitle">
+                                        <Form.Label>Title: </Form.Label>
+                                        <Form.Control type="title" name="title" value={this.state.title}
+                                            onChange={this.handleChange} placeholder="Enter title"
+                                        />
+                                    </Form.Group>
 
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Label>Post:</Form.Label>
-                                    <Form.Control as="textarea" name="post" type="text" value={this.state.post}
-                                        onChange={this.handleChange} placeholder="Enter post"
-                                    />
-                                </Form.Group>
-                                <Button variant="primary" type="submit">
-                                    Post
+                                    <Form.Group controlId="formBasicPassword">
+                                        <Form.Label>Post:</Form.Label>
+                                        <Form.Control as="textarea" name="post" type="text" value={this.state.post}
+                                            onChange={this.handleChange} placeholder="Enter post"
+                                        />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit">
+                                        Post
                                 </Button>
-                            </Form>
+                                </Form>
 
 
-                            {/* {}
+                                {/* {}
                             <div className="form-group">
                                 <label >
                                     Title: <input
@@ -101,6 +102,7 @@ class UserInfoForm extends
                                 </label>
                             </div>
                             <input type="submit" value="Submit" /> */}
+                            </div>
                         </div>
                     </div>
                 </div>
