@@ -39,40 +39,42 @@ class Login extends React.Component {
     render() {
         return (
             <div className="">
-                <div className="sidenav">
-                    <div className="login-main-text ">
-                        <h1 className="CC">Covid Co-Op</h1>
-                        <br />
-                        <br />
-                        <h2 className="h2Login"> Login Page </h2>
-                        <p> Please Login or Register to access this page.</p>
+                <div className="row">
+                    <div className="sidenav col-md-4">
+                        <div className="sideNav-main-text">
+                            <h1 className="CC">Covid Co-Op</h1>
+                            <br />
+                            <br />
+                            <h2 className="h2Login"> Login Page </h2>
+                            <p> Please Login or Register to access this page.</p>
+                        </div>
                     </div>
-                </div>
-                <div className="main">
-                    <div className="col-md-6 col-sm-12">
-                        <div className="login-form ">
-                        <h2>Login</h2>
-                            <Form onSubmit={this.handleSubmit}>
-                                <Form.Group controlId="formBasicEmail">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" name="email" value={this.state.email} 
-                                    onChange={this.handleChange}placeholder="Enter email" 
-                                    />
-                                    <Form.Text className="text-muted">
-                                        We'll never share your email with anyone else.
+                    <div className="container main col-md-6 col-sm-10">
+                        <div className="col-md-8 col-sm-12">
+                            <div className="login-form ">
+                                <h2>Login</h2>
+                                <Form onSubmit={this.handleSubmit}>
+                                    <Form.Group controlId="formBasicEmail">
+                                        <Form.Label>Email address</Form.Label>
+                                        <Form.Control type="email" name="email" value={this.state.email}
+                                            onChange={this.handleChange} placeholder="Enter email"
+                                        />
+                                        <Form.Text className="text-muted">
+                                            We'll never share your email with anyone else.
                                     </Form.Text>
-                                </Form.Group>
+                                    </Form.Group>
 
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" name="password" value={this.state.password} 
-                                    onChange={this.handleChange} placeholder="Enter password" 
-                                    />
-                                </Form.Group>
-                                <Button variant="primary" type="submit">
-                                    Login
+                                    <Form.Group controlId="formBasicPassword">
+                                        <Form.Label>Password</Form.Label>
+                                        <Form.Control type="password" name="password" value={this.state.password}
+                                            onChange={this.handleChange} placeholder="Enter password"
+                                        />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit">
+                                        Login
                                 </Button>
-                            </Form>
+                                </Form>
+                            </div>
                         </div>
                     </div>
                 </div>

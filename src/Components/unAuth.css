@@ -1,75 +1,66 @@
 body {
-    font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .main-head {
-    height: 200px;
-    background: #fff;
+  height: 200px;
+  background: #fff;
 }
 
 .sidenav {
-    height: 100%;
-    background-color: #000;
-    overflow-x: auto;
-    padding-top: 20px;
-}
-
-.CC {
-    word-wrap: break-word;
+  height: 500vh;
+  width: 100%;
+  background-color: #000;
+  overflow-x: auto;
+  padding-top: 20px;
 }
 
 .main {
-    padding: 0px 10px;
+  /* padding: 0px 10px; */
+  width: 100%;
 }
 
-@media screen and (max-width: 450px) {
-    .login-form {
-        margin-top: 10px;
-        margin-bottom: 30px;
-    }
-    .register-form {
-        margin-bottom: 30px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .main {
-        margin-left: 40%;
-    }
-    .sidenav {
-        width: 20%;
-        position: fixed;
-        z-index: -1;
-        top: 0;
-        left: 0;
-    }
-    .CC {
-        letter-spacing: 10px;
-    }
-    .h2Login {
-        letter-spacing: 5px;
-    }
-    .login-form {
-        margin-top: 200px;
-        width: 100%;
-    }
-    .register-form {
-        margin-top: 50px;
-    }
-}
-
-.login-main-text {
-    margin-top: 150px;
-    padding: 60px;
-    color: #fff;
-}
-
-.login-main-text h2 {
-    font-weight: 300;
-}
-
-.loginButton {
+@media screen and (max-width: 576px) {
+  .login-form {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .register-form {
+    margin-bottom: 30px;
+  }
+  .sidenav {
+    height: 30vh;
     background-color: #000;
+  }
+  .sideNav-main-text {
+    margin: 15px;
+    padding-left: 5px;
     color: #fff;
-    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .main {
+    margin-left: 40%;
+  }
+  .sidenav {
+    width: 20%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  .CC {
+    letter-spacing: 10px;
+  }
+  .h2Login {
+    letter-spacing: 5px;
+  }
+  .login-form {
+    margin-top: 200px;
+    width: 100%;
+  }
+  .register-form {
+    margin-top: 50px;
+  }
 }
