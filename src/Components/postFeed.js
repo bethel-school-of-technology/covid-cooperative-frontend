@@ -10,12 +10,15 @@ export default function PostFeed() {
         console.log(posts)
         const getAllPosts = async (e) => {
             try {
-                let data = await fetch("http://localhost:3001/posts/allPosts", { credentials: 'include' })
+                let data = await fetch("http://localhost:3001/posts/allPosts", 
+                { credentials: 'include', headers: {'Authorization': localStorage.getItem("Auth") }
+            })
                 let postsData = await data.json();
 
                 console.log(postsData.data)
 
                 setPosts(postsData.data.allPosts)
+
                 console.log(posts)
             } catch (err) {
                 console.log(err)
