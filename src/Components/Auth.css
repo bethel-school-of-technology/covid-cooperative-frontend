@@ -1,64 +1,88 @@
 body {
-    font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  /* height: 500vh;  */
+  /* position: fixed;  */
+  width: 100%;
+  background-color: #000;
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
+.main {
+  margin: 40px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.CC {
+  letter-spacing: 10px;
+}
+
+.card {
+  padding: 5px;
+  margin: 10px;
+}
+
+.sideNav-main-text {
+  margin-top: 150px;
+  padding: 60px;
+  color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+  .post-form {
+    margin-top: 10px;
+    margin-bottom: 30px;
   }
-  
-  .main-head {
-    height: 200px;
-    background: #fff;
+  .CClogo {
+    height: 75px;
   }
-  
-  .sidenav {
-    height: 100%;
-    background-color: #000;
-    overflow-x: auto;
-    padding-top: 20px;
-  }
-  
   .main {
-    padding: 0px 10px;
+    margin: 5px;
   }
 
-  .card {
-    padding: 5px; 
-    margin: 10px; 
+  .NavBar {
+    padding: 10px;
+    padding-top: 5px;
   }
-  
-  
-  @media screen and (max-width: 450px) {
-    .post-form {
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
-  
+
+  .sidenav {
+    height: 20vh;
+    background-color: #000;
   }
-  
-  @media screen and (min-width: 768px) {
-    .main {
+
+  .sideNav-main-text {
+    margin: 15px;
+    padding-left: 5px;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  /* .main {
       margin-left: 40%;
-    }
-  
-    .sidenav {
-      width: 30%;
-      position: fixed;
-      z-index: -1;
-      top: 0;
-      left: 0;
-    }
-  
-    .CC {
-      letter-spacing: 10px;
-    }
-  
-    .post-form {
-      margin-top: 200px;
-      width: 100%
-    }
-  
-    .home-main-text , .post-main-text, .form-main-text {
-      margin-top: 150px;
-      padding: 60px;
-      color: #fff;
-    }
+    } */
+
+  .sidenav {
+    height: 500vh;
+    /* position: sticky; */
+    z-index: -1;
+    top: 0;
+    left: 0;
   }
-  
-  
+
+  .post-form {
+    margin-top: 200px;
+    width: 100%;
+  }
+
+  .sideNav-main-text {
+    margin-top: 150px;
+    padding: 60px;
+    color: #fff;
+  }
+}

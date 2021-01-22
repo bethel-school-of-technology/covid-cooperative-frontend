@@ -3,10 +3,6 @@ import '../Components/unAuth.css';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-
-
-
-
 // Below is the form to signup. 
 
 class Signup extends Component {
@@ -80,8 +76,9 @@ class Signup extends Component {
     render() {
         return (
             <div>
-                <div className="sidenav">
-                    <div className="form-main-text ">
+                <div className="row">
+                <div className="sidenav col-md-4">
+                    <div className="sideNav-main-text">
                         <h1 className="CC">Covid Co-Op</h1>
                         <br />
                         <br />
@@ -89,8 +86,8 @@ class Signup extends Component {
                         <p> Please Register and Login to access this page.</p>
                     </div>
                 </div>
-                <div className="main">
-                    <div className="col-md-6 col-sm-12">
+                <div className="container main col-md-6 col-sm-10">
+                    <div className="col-md-8 col-sm-12">
                         <div className="register-form">
                             <div onSubmit={(e) => this.handleSubmit(e)}>
                                 <div onSubmit={this.handleSubmit}>
@@ -177,6 +174,7 @@ class Signup extends Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
         )
