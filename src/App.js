@@ -8,7 +8,7 @@ import Post from "./Components/post.js";
 import PostFeed from "./Components/postFeed.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import PrivateRoute from './private';
+import PrivateRoute from './private'; //privateroute notes...
 
 function App() {
   return (
