@@ -8,6 +8,7 @@ import Post from "./Components/post.js";
 import PostFeed from "./Components/postFeed.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import PrivateRoute from './private';
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
           <Route path="/form" component={Signup} />
           <Route path="/post" component={Post} />
           <Route path="/postFeed" component={PostFeed} />
+          <PrivateRoute
+            path="/admin"
+            Component={Home}
+            isAuthenticated={false}
+          />
         </Switch>
       </Router>
     </div>
