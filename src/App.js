@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import PrivateRoute from './private'; //privateroute notes...
 
+
 function App() {
   return (
     <div>

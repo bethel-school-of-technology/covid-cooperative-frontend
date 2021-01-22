@@ -76,9 +76,9 @@ class UserInfoForm extends
                                             onChange={this.handleChange} placeholder="Enter post"
                                         />
                                     </Form.Group>
-                                    <Button variant="primary" type="submit">
+                                   <a href="http://localhost:3000/postFeed"><Button variant="primary" type="submit">
                                         Post
-                                </Button>
+                                </Button></a>
                                 </Form>
 
 
