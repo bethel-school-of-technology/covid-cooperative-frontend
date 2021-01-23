@@ -3,12 +3,13 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Route,
-    Redirect
+    Redirect,
 } from 'react-router-dom';
 
 const Private = ({ component: component, isAuthenticated, ...rest}) => (
 <Route {...rest} render={props => (
-    isAuthenticated?(<Component {...props}/>):
+    isAuthenticated?
+    (<Component {...props}/>):
     (<Redirect to={{pathname: '/login', state: {from: props.location}}}/>)
 )}/>
 
